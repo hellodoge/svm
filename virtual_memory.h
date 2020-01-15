@@ -4,7 +4,6 @@
 #include <stdint.h>
 #include "constants.h"
 
-#define GET(word,pos,len) ((word) >> (16 - (pos) - (len)) & 0xFFFF >> (16 - (len)))
 
 typedef struct virtual_memory {
 	uint16_t stack, heap;
