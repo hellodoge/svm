@@ -21,12 +21,12 @@ void exec() {
 		uint16_t term = GET_MODE(instr) ? GET_TERM(instr) : reg[GET_R2(instr)];
 		switch (GET_OP(instr)) {
 			case OP_ADD:
-				reg[GET_R1(instr)] += term;
 				reg[R_FLAGS] = reg[GET_R1(instr)] > UINT16_MAX - term ? FL_OVERFLOW : FL_SUCCESS;
+				reg[GET_R1(instr)] += term;
 				break;
 			case OP_SUB:
-				reg[GET_R1(instr)] -= term;
 				reg[R_FLAGS] = reg[GET_R1(instr)] < term ? FL_OVERFLOW : FL_SUCCESS;
+				reg[GET_R1(instr)] -= term;
 				break;
 			case OP_MUL:
 				reg[GET_R1(instr)] *= term;
