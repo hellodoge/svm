@@ -10,6 +10,9 @@ void handle_interrupt() {
 		case TRAP_PRINT_STR:
 			printf("%s", (char*)&memory[reg[R_BX]]);
 			break;
+		case TRAP_PRINT_INT:
+			printf("%d", reg[R_BX]);
+			break;
 		case TRAP_EXIT:
 			exit(reg[R_BX]);
 	}
