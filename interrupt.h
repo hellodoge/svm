@@ -7,8 +7,8 @@
 
 void handle_interrupt() {
 	switch (reg[R_AX]) {
-		case TRAP_PUTS:
-			puts((char*)&memory[reg[R_BX]]);
+		case TRAP_PRINT_STR:
+			printf("%s", (char*)&memory[reg[R_BX]]);
 			break;
 		case TRAP_EXIT:
 			exit(reg[R_BX]);

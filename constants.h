@@ -45,7 +45,7 @@ enum {
 
 enum {
 	TRAP_EXIT,
-	TRAP_PUTS,
+	TRAP_PRINT_STR,
 };
 
 #endif //SVM_CONSTANTS_H
