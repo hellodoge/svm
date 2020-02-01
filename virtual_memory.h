@@ -28,7 +28,7 @@ void set_word(uint16_t pos, uint16_t value) {
 void load_image(char *path) {
 	FILE *fp;
 	fp = fopen(path,"rb");
-	fread(&segments.text, sizeof(uint16_t),1,fp);
+	fread(&segments.data, sizeof(uint16_t),1,fp);
 	fread(memory,UINT16_MAX,1,fp);
 	fclose(fp);
 }

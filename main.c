@@ -14,6 +14,6 @@ int main(int argc, char** argv) {
 	do {
 		exec();
 		handle_interrupt();
-	} while (reg[R_PC] <= segments.text);
+	} while (reg[R_PC] <= segments.data);
 	return -2;
 }
