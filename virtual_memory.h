@@ -36,6 +36,7 @@ void load_image(char *path) {
 	fread(&segments.data, sizeof(uint16_t),1,fp);
 	fread(memory,UINT16_MAX,1,fp);
 	fclose(fp);
+	reg[R_SP] = UINT16_MAX;
 }
 
 #endif //SVM_VIRTUAL_MEMORY_H
