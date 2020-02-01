@@ -16,6 +16,13 @@ void handle_interrupt() {
 		case TRAP_PUTCHAR:
 			putchar(reg[R_BX]);
 			break;
+		case TRAP_GETINT: {
+			int tmp;
+			reg[R_AX] = scanf("%d",&tmp); // NOLINT(cert-err34-c)
+			if (!reg[R_AX]) while (getchar() != '\n');
+			reg[R_BX] = tmp;
+			break;
+		}
 		case TRAP_EXIT:
 			exit(reg[R_BX]);
 	}
