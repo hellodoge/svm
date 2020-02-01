@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "constants.h"
 
 
@@ -22,6 +23,10 @@ uint16_t get_word(uint16_t pos) {
 }
 
 void set_word(uint16_t pos, uint16_t value) {
+	if (pos < segments.data) {
+		puts("Segmentation fault");
+		exit(-3);
+	}
 	*((uint16_t*)(memory+pos)) = value;
 }
 
