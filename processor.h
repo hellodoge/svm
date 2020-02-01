@@ -16,6 +16,10 @@
 void exec() {
 	uint8_t interrupted = 0;
 	do {
+		if (reg[R_PC] >= segments.data) {
+			puts("Segmentation fault");
+			exit(-4);
+		}
 		uint16_t instr = get_word(reg[R_PC]);
 		reg[R_PC] += 2;
 		uint16_t term = GET_MODE(instr) ? GET_TERM(instr) : reg[GET_R2(instr)];
