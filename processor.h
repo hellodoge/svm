@@ -95,7 +95,7 @@ void exec() {
 				reg[GET_R1(instr)] = get_word(reg[R_SP]);
 				break;
 			case OP_JMP:
-				if (GET_TERM(instr) || !reg[R_FLAGS])
+				if (GET_TERM(instr) == UINT8_MAX || GET_TERM(instr) == reg[R_FLAGS])
 					reg[R_PC] = GET_MODE(instr) ? reg[GET_R1(instr)] : get_word(reg[R_PC]);
 				else if (!GET_MODE(instr)) reg[R_PC] += 2;
 				break;
