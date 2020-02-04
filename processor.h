@@ -56,7 +56,8 @@ void exec() {
 					reg[R_FLAGS] = FL_EQUAL;
 				break;
 			case OP_NOT:
-				reg[GET_R1(instr)] = term ? 0 : 1;
+				if (GET_MODE(instr)) reg[GET_R1(instr)] = ~reg[GET_R2(instr)];
+				else reg[GET_R1(instr)] = reg[GET_R1(instr)] ? 0 : 1;
 				break;
 			case OP_LDR:
 				if (GET_MODE(instr)) {
