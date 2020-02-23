@@ -1,6 +1,6 @@
 #include "virtual_memory.h"
 #include "processor.h"
-#include "interrupt.h"
+#include "trap_routines.h"
 
 int main(int argc, char** argv) {
 
@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
 
 	do {
 		exec();
-		handle_interrupt();
+		handle_trap_routine();
 	} while (reg[R_PC] <= segments.data);
 	return -2;
 }

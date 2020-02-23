@@ -3,4 +3,4 @@ project(svm C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(svm main.c virtual_memory.h constants.h processor.h interrupt.h)
+add_executable(svm main.c virtual_memory.h constants.h processor.h trap_routines.h)

@@ -1,11 +1,11 @@
-#ifndef SVM_INTERRUPT_H
-#define SVM_INTERRUPT_H
+#ifndef SVM_TRAP_ROUTINES_H
+#define SVM_TRAP_ROUTINES_H
 
 #include <stdio.h>
 #include "virtual_memory.h"
 #include "constants.h"
 
-void handle_interrupt() {
+void handle_trap_routine() {
 	switch (reg[R_AX]) {
 		case TRAP_PRINT_STR:
 			printf("%s", (char*)&memory[reg[R_BX]]);
@@ -28,4 +28,4 @@ void handle_interrupt() {
 	}
 }
 
-#endif //SVM_INTERRUPT_H
+#endif //SVM_TRAP_ROUTINES_H
