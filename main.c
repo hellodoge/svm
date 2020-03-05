@@ -4,7 +4,7 @@
 
 int main(int argc, char** argv) {
 
-	if (!argc) {
+	if (argc < 2) {
 		puts("usage: svm [image]");
 		return -1;
 	}
