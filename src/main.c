@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "virtual_memory.h"
 #include "processor.h"
 #include "trap_routines.h"
