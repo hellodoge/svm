@@ -26,7 +26,10 @@ void load_image(char *path) {
 	FILE *fp;
 	fp = fopen(path,"rb");
 	fread(&segments.data, sizeof(uint16_t),1,fp);
+	fread(&segments.bss, sizeof(uint16_t),1,fp);
+	fread(&segments.heap, sizeof(uint16_t),1,fp);
 	fread(memory,UINT16_MAX,1,fp);
 	fclose(fp);
 	reg[R_SP] = UINT16_MAX;
+	reg[R_HP] = segments.heap;
 }
