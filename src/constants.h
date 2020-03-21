@@ -43,12 +43,4 @@ enum {
 	FL_MEMERR,
 };
 
-enum {
-	TRAP_EXIT = 0,
-	TRAP_PRINT_STR,
-	TRAP_PRINT_INT,
-	TRAP_PUTCHAR,
-	TRAP_GETINT,
-};
-
 #endif //SVM_CONSTANTS_H
