@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include <stdlib.h>
-#include "virtual_memory.h"
+#include "vm_memory.h"
 #include "constants.h"
 #include "stdio.h"
 

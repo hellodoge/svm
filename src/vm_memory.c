@@ -1,4 +1,4 @@
-#include "virtual_memory.h"
+#include "vm_memory.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,7 +6,7 @@
 #include "constants.h"
 
 uint8_t memory[UINT16_MAX];
-virtual_memory_t segments;
+vm_memory_t segments;
 
 uint16_t reg[R_COUNT];
 

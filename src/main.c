@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "virtual_memory.h"
+#include "vm_memory.h"
 #include "processor.h"
 #include "trap_routines.h"
 

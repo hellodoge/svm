@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "virtual_memory.h"
+#include "vm_memory.h"
 #include "constants.h"
 
 extern uint8_t memory[UINT16_MAX];
