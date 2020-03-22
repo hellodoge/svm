@@ -63,7 +63,7 @@ void exec() {
 				break;
 			case OP_STR:
 				if (GET_MODE(instr)) {
-					set_word(reg[GET_R1(instr)], reg[GET_R2(instr)]);
+					set_word(reg[GET_R2(instr)], reg[GET_R1(instr)]);
 				} else {
 					uint16_t pos = get_word(reg[R_PC]);
 					reg[R_PC] += 2;
