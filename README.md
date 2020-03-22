@@ -81,6 +81,8 @@ AX | Trap routine | BX | Description
 2 | PRINT INT | Integer | Output the number
 3 | PUTCHAR | Character | Output single character
 4 | GET INT || Get int and store it in BX register, error code in AX
+5 | MALLOC | Size | Allocates the requested memory and store a pointer to it in AX register
+6 | FREE | Pointer | Deallocates the memory previously allocated by MALLOC
 
 ## License
 This code is released under an MIT License. You are free to use, modify, distribute, or sell it under those terms.
