@@ -7,6 +7,8 @@ enum {
 	TRAP_PRINT_INT,
 	TRAP_PUTCHAR,
 	TRAP_GETINT,
+	TRAP_MALLOC,
+	TRAP_FREE,
 };
 
 void handle_trap_routine();

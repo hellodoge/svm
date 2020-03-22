@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "vm_memory.h"
 #include "constants.h"
+#include "vm_malloc.h"
 
 extern uint8_t memory[UINT16_MAX];
 
@@ -25,6 +26,12 @@ void handle_trap_routine() {
 			reg[R_BX] = tmp;
 			break;
 		}
+		case TRAP_MALLOC:
+			reg[R_AX] = vm_malloc(reg[R_BX]);
+			break;
+		case TRAP_FREE:
+			vm_free(reg[R_BX]);
+			break;
 		case TRAP_EXIT:
 			exit(reg[R_BX]);
 	}
