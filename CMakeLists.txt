@@ -7,7 +7,9 @@ add_executable(svm src/main.c
         src/processor.c
         src/trap_routines.c
         src/vm_memory.c
+        src/vm_malloc.c
         src/vm_memory.h
         src/constants.h
         src/processor.h
-        src/trap_routines.h)
+        src/trap_routines.h
+        src/vm_malloc.h)
