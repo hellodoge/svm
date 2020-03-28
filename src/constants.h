@@ -20,13 +20,13 @@ enum {
 	OP_SUB,
 	OP_MUL,
 	OP_DIV,
-	OP_MOD,
 	OP_AND,
 	OP_OR,
 	OP_CMP,
 	OP_NOT,
 	OP_LDR,
 	OP_STR,
+	OP_STB,
 	OP_MOV,
 	OP_PUSH,
 	OP_POP,
@@ -41,6 +41,7 @@ enum {
 	FL_SUCCESS,
 	FL_OVERFLOW,
 	FL_MEMERR,
+	FL_DIVISION_BY_ZERO = UINT16_MAX,
 };
 
 #endif //SVM_CONSTANTS_H

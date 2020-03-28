@@ -29,10 +29,12 @@ void exec() {
 				reg[GET_R1(instr)] *= term;
 				break;
 			case OP_DIV:
+				if (!term) {
+					reg[R_FLAGS] = FL_DIVISION_BY_ZERO;
+					break;
+				}
+				reg[R_FLAGS] = reg[GET_R1(instr)] % term;
 				reg[GET_R1(instr)] /= term;
-				break;
-			case OP_MOD:
-				reg[GET_R1(instr)] %= term;
 				break;
 			case OP_AND:
 				reg[GET_R1(instr)] &= term;
@@ -68,6 +70,15 @@ void exec() {
 					uint16_t pos = get_word(reg[R_PC]);
 					reg[R_PC] += 2;
 					set_word(pos, reg[GET_R1(instr)]);
+				}
+				break;
+			case OP_STB:
+				if (GET_MODE(instr)) {
+					set_byte(reg[GET_R2(instr)], reg[GET_R1(instr)]);
+				} else {
+					uint16_t pos = get_word(reg[R_PC]);
+					reg[R_PC] += 2;
+					set_byte(pos, reg[GET_R1(instr)]);
 				}
 				break;
 			case OP_MOV:
