@@ -16,6 +16,7 @@ extern uint16_t reg[R_COUNT];
 
 uint16_t get_word(uint16_t pos);
 void set_word(uint16_t pos, uint16_t value);
+void set_byte(uint16_t pos, uint8_t value);
 void load_image(char *path);
 
 #endif //SVM_VM_MEMORY_H

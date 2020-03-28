@@ -14,12 +14,21 @@ uint16_t get_word(uint16_t pos) {
 	return *(uint16_t*)(memory + pos);
 }
 
-void set_word(uint16_t pos, uint16_t value) {
+void terminate_if_read_only(uint16_t pos) {
 	if (pos < segments.data) {
 		puts("Segmentation fault");
 		exit(-3);
 	}
+}
+
+void set_word(uint16_t pos, uint16_t value) {
+	terminate_if_read_only(pos);
 	*((uint16_t*)(memory+pos)) = value;
+}
+
+void set_byte(uint16_t pos, uint8_t value) {
+	terminate_if_read_only(pos);
+	*((uint8_t*)(memory+pos)) = value;
 }
 
 void load_image(char *path) {
