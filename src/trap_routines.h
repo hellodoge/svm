@@ -9,6 +9,7 @@ enum {
 	TRAP_GETINT,
 	TRAP_MALLOC,
 	TRAP_FREE,
+	TRAP_GET_STRING,
 };
 
 void handle_trap_routine();

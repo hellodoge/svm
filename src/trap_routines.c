@@ -32,6 +32,9 @@ void handle_trap_routine() {
 		case TRAP_FREE:
 			vm_free(reg[R_BX]);
 			break;
+		case TRAP_GET_STRING:
+			fgets((char*)&memory[reg[R_BX]], reg[R_CX], stdin);
+			break;
 		case TRAP_EXIT:
 			exit(reg[R_BX]);
 	}
