@@ -29,6 +29,11 @@ void exec() {
 				reg[GET_R1(instr)] *= term;
 				break;
 			case OP_DIV:
+				if (!term) {
+					reg[R_FLAGS] = FL_DIVISION_BY_ZERO;
+					break;
+				}
+				reg[R_FLAGS] = reg[GET_R1(instr)] % term;
 				reg[GET_R1(instr)] /= term;
 				break;
 			case OP_MOD:
